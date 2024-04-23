@@ -1,24 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import Encode from './Encode';
+import { BrowserRouter as Router, Link, Route, Switch,Routes } from 'react-router-dom';
+import Decode from './Decode';
+import VideoStego from './Videostego';
+import {
+  EmailShareButton,
+  EmailIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+  TwitterShareButton,
+  TwitterIcon,
+ 
+} from "react-share";
 
 function App() {
+ //
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  //   <>
+  //  <Header/>
+  //  <Encode/>
+  //  </>
+  
+
+  <Router>
+    <><Header/></>
+  <Routes>
+    <Route exact path="/" element={<Encode/>} />
+    <Route path="/decode" element={<Decode/>} />
+    <Route path="/video" element={<VideoStego/>} />
+  </Routes>
+</Router>
   );
 }
 
